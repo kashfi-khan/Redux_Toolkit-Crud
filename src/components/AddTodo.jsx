@@ -18,14 +18,12 @@ function AddTodo({ editTodo, setEditTodo }) {
     e.preventDefault();
 
     if (editTodo) {
-      // If in edit mode, update the todo
       dispatch(updateTodo({ id: editTodo.id, text: input }));
       setEditTodo(null); // Exit edit mode
     } else {
-      // Otherwise, add a new todo
       dispatch(addTodo(input));
     }
-    setInput(""); // Clear the input field
+    setInput("");
   };
 
   return (
